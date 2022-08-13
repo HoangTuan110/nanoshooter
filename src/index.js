@@ -89,7 +89,6 @@ scene("game", () => {
 			origin("center"),
 			color(BLUE),
 			"bullet",
-      { dir: mpos.sub(player.pos).unit }
 		])
     ammoAmount--
     // == Handle bullet moving ==
