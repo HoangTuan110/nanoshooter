@@ -79,12 +79,7 @@ scene("game", () => {
   // Bullet
   function spawnBullet() {
     if (get("enemy").length === 0 || (ammoAmount === 0)) return
-<<<<<<< HEAD
     add([
-=======
-    const dir = get("enemy")[0].pos.sub(player.pos).unit()
-    const bullet = add([
->>>>>>> parent of 792f235 (Move the bullet collision handling outside of spawnBullet())
 			pos(player.pos),
 			move(dir, BULLET_SPEED),
       outline(4),
@@ -96,20 +91,18 @@ scene("game", () => {
 			"bullet",
 		])
     ammoAmount--
-<<<<<<< HEAD
     // == Handle bullet moving ==
     onUpdate("bullet", (bullet) => {
-      const dir = mousePos().unit()
+      const dir = get("enemy")[0].pos.sub(player.pos).unit()
       bullet.move(dir.scale(BULLET_SPEED))
-=======
-    bullet.onCollide("enemy", (enemy) => {
+    })
+    onCollide("bullet", "enemy", (enemy) => {
       play("dead")
       destroy(bullet)
       destroy(enemy)
       addKaboom(enemy.pos)
       shake()
       points++
->>>>>>> parent of 792f235 (Move the bullet collision handling outside of spawnBullet())
     })
     wait(1.0)
   }
