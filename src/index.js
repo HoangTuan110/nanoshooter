@@ -3,7 +3,7 @@ import kaboom from "kaboom"
 // == Constants ==
 const SPEED = 320,
       ENEMY_SPEED = 160,
-      BULLET_SPEED = 30,
+      BULLET_SPEED = 20,
       BACKGROUND = [173, 166, 229], // #ADA6E5
       ENEMY_COLOR = [255, 17, 102] // #F16
 
