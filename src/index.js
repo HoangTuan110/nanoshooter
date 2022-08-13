@@ -49,6 +49,12 @@ scene("menu", () => {
   ])
   // This one needs special positioning for some reason
   addButton("Start", pos(310, 320), () => go("game"))
+  addButton("Controls", pos(310, 380), () => go("how"))
+})
+
+scene("how", () => {
+  // How-to section
+  addButton("Go back", pos(510, 520), () => go("menu"))
 })
 
 scene("game", () => {
