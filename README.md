@@ -21,6 +21,16 @@ Nanoshooter is a shitty top-down 2D shooter game. Created in ~4 hours using [Kab
 - <kbd>z</kbd> for shooting
 - <kbd>r</kbd> for reloading
 
+## Run this game locally
+
+Install [Yarn](https://yarnpkg.com/) and [Python 3](https://www.python.org/), then:
+
+```sh
+git clone https://github.com/HoangTuan110/nanoshooter
+yarn
+yarn build; yarn serve
+```
+
 ## License
 
 This game is under the MIT license. See LICENSE for details
