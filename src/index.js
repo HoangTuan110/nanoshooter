@@ -73,6 +73,7 @@ scene("game", () => {
   // Bullet
   function spawnBullet() {
     if (get("enemy").length === 0 || (ammoAmount === 0)) return
+    const mpos = mousePos()
     add([
 			pos(player.pos),
       outline(4),
@@ -86,7 +87,7 @@ scene("game", () => {
     ammoAmount--
     // == Handle bullet moving ==
     onUpdate("bullet", (bullet) => {
-      const dir = mousePos().sub(player.pos).unit()
+      const dir = get("enemy")[0].pos.sub(player.pos).unit()
       bullet.move(dir.scale(BULLET_SPEED))
     })
     onCollide("bullet", "enemy", (bullet, enemy) => {
