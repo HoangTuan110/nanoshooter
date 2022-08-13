@@ -160,9 +160,8 @@ scene("game", () => {
     spawnBullet()
   })
   onKeyPress("r", () => {
-    wait(0.5)
+    wait(1.5)
     ammoAmount = 30
-    display()
   })
 
   // == Handle bullet moving ==
