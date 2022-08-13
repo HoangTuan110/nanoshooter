@@ -58,8 +58,8 @@ scene("game", () => {
   let points = 0
 
   // == Load assets ==
-  loadSound("shoot", "../assets/laserShoot.wav")
-  loadSound("dead", "../assets/explosion.wav")
+  loadSound("shoot", "./assets/laserShoot.wav")
+  loadSound("dead", "./assets/explosion.wav")
 
   // == Entities ==
 
