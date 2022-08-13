@@ -89,7 +89,7 @@ scene("game", () => {
       const dir = get("enemy")[0].pos.sub(player.pos).unit()
       bullet.move(dir.scale(BULLET_SPEED))
     })
-    onCollide("bullet", "enemy", (enemy) => {
+    onCollide("bullet", "enemy", (bullet, enemy) => {
       play("dead")
       destroy(bullet)
       destroy(enemy)
