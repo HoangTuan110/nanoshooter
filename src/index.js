@@ -165,6 +165,11 @@ scene("game", () => {
     display()
   })
 
+  // == Handle bullet moving ==
+  onUpdate("bullet", (bullet) => {
+    bullet.move(bullet.dir.scale(BULLET_SPEED))
+  })
+
   // == Handle collisions ==
   player.onCollide("enemy", (enemy) => {
     play("dead")
