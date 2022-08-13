@@ -86,7 +86,7 @@ scene("game", () => {
     ammoAmount--
     // == Handle bullet moving ==
     onUpdate("bullet", (bullet) => {
-      const dir = get("enemy")[0].pos.sub(player.pos).unit()
+      const dir = mousePos().sub(player.pos).unit()
       bullet.move(dir.scale(BULLET_SPEED))
     })
     onCollide("bullet", "enemy", (bullet, enemy) => {
