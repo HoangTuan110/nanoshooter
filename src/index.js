@@ -3,7 +3,7 @@ import kaboom from "kaboom"
 // == Constants ==
 const SPEED = 320,
       ENEMY_SPEED = 160,
-      BULLET_SPEED = 200,
+      BULLET_SPEED = 100,
       BACKGROUND = [173, 166, 229], // #ADA6E5
       ENEMY_COLOR = [255, 17, 102] // #F16
 
@@ -73,14 +73,12 @@ scene("game", () => {
   // Bullet
   function spawnBullet() {
     if (get("enemy").length === 0 || (ammoAmount === 0)) return
-    const mpos = mousePos()
     add([
 			pos(player.pos),
       outline(4),
 			rect(12, 12),
 			area(),
 			cleanup(),
-			origin("center"),
 			color(BLUE),
 			"bullet",
 		])
