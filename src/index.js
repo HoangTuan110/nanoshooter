@@ -50,12 +50,6 @@ scene("menu", () => {
   ])
   // This one needs special positioning for some reason
   addButton("Start", pos(310, 320), () => go("game"))
-  addButton("Controls", pos(380, 380), () => go("how"))
-})
-
-scene("how", () => {
-  // How-to section
-  addButton("Go back", pos(510, 520), () => go("menu"))
 })
 
 scene("game", () => {
@@ -81,7 +75,6 @@ scene("game", () => {
     if (get("enemy").length === 0 || (ammoAmount === 0)) return
     add([
 			pos(player.pos),
-			move(dir, BULLET_SPEED),
       outline(4),
 			rect(12, 12),
 			area(),
