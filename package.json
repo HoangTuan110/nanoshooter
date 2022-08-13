@@ -1,0 +1,17 @@
+{
+  "name": "nanoshooter",
+  "version": "1.0.0",
+  "description": "A very minimal shooter game.",
+  "main": "index.js",
+  "scripts": {
+    "build": "esbuild src/index.js --bundle --minify --sourcemap > bin/build.js",
+    "serve": "python3 -m http.server"
+  },
+  "keywords": [],
+  "author": "Dang Hoang Tuan (Tsuki) <tsukii@disroot.org>",
+  "license": "MIT",
+  "dependencies": {
+    "esbuild": "^0.15.1",
+    "kaboom": "^2000.2.9"
+  }
+}
