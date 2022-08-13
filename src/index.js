@@ -12,32 +12,33 @@ kaboom({
   background: BACKGROUND,
 })
 
+// https://kaboomjs.com/play?demo=button
+function addButton(txt, p, f) {
+  const btn = add([
+    text(txt),
+    p,
+    area({ cursor: "pointer", }),
+    scale(1),
+    origin("center"),
+  ])
+  btn.onClick(f)
+  btn.onUpdate(() => {
+    if (btn.isHovering()) {
+      const t = time() * 10
+      btn.color = rgb(
+        wave(0, 255, t),
+        wave(0, 255, t + 2),
+        wave(0, 255, t + 4),
+      )
+      btn.scale = vec2(1.2)
+    } else {
+      btn.scale = vec2(1)
+      btn.color = rgb()
+    }
+  })
+}
+
 scene("menu", () => {
-  // https://kaboomjs.com/play?demo=button
-  function addButton(txt, p, f) {
-    const btn = add([
-      text(txt),
-      p,
-      area({ cursor: "pointer", }),
-      scale(1),
-      origin("center"),
-    ])
-    btn.onClick(f)
-    btn.onUpdate(() => {
-      if (btn.isHovering()) {
-        const t = time() * 10
-        btn.color = rgb(
-          wave(0, 255, t),
-          wave(0, 255, t + 2),
-          wave(0, 255, t + 4),
-        )
-        btn.scale = vec2(1.2)
-      } else {
-        btn.scale = vec2(1)
-        btn.color = rgb()
-      }
-    })
-  }
   add([
     text("NanoShooter"),
     pos(200, 160)
